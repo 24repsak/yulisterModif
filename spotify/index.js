@@ -62,6 +62,7 @@ class Spotify {
         while (subItem.length > 0) {
           finalName += `${subItem.pop()} ` 
         }
+        console.log(`coba: ${finalName}`)
         arr.playlist.push(finalName)
       })
       
