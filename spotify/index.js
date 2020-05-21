@@ -24,14 +24,12 @@ class Spotify {
     async processScrap (arr) {
       const craw = util.promisify(crawler);
       const newArray = [];
-      const promises = arr.map(async (name, idx) => {
+      const promises = arr.forEach(async (name, idx) => {
         let result = await craw(name);
         if (result.length > 0) {
           newArray.push({
             name: result[0].title,
-            id: result[0].link.substring(result[0].link.indexOf("watch?v=") + 8, result[0].link.length),
-            url: result[0].link,
-            originalName: name
+            url: result[0].link
           })
         }
       });
