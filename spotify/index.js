@@ -51,14 +51,13 @@ class Spotify {
         let tags = el.children
         names.push(tags.map(tag => {
           if (tag.name === 'a') {
-            console.log(tag.children[0].children[0]);
-            console.log('c');
             return tag.children[0].children[0].data
           }
         }).filter(x => x !== undefined))
-        console.log(names);
         return names;
       }).get();
+
+      console.log(listSpotify);
 
       listSpotify.forEach(subItem => {
         let finalName = ''
