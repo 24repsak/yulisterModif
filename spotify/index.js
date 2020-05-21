@@ -46,6 +46,8 @@ class Spotify {
       let res = await got(this.url)
       const $ = cheerio.load(res.body);
       const artist = $('span.artists-albums');
+      console.log(artist);
+      console.log('abc')
       const listSpotify = artist.map((index, el) => {
         let names = []
         let tags = el.children
@@ -54,7 +56,6 @@ class Spotify {
             return tag.children[0].children[0].data
           }
         }).filter(x => x !== undefined))
-        console.log(`a: ${names}`)
         return names;
       }).get();
 
@@ -63,7 +64,6 @@ class Spotify {
         while (subItem.length > 0) {
           finalName += `${subItem.pop()} ` 
         }
-        console.log(`coba: ${finalName}`)
         arr.playlist.push(finalName)
       })
       
