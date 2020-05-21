@@ -48,12 +48,16 @@ class Spotify {
       // console.log($('span'))
       // const artist = $('span.artists-albums');
       const artist = $('span.track-name');
-      console.log(artist)
+      // console.log(artist)
       const listSpotify = artist.map((index, el) => {
         let names = []
         let tags = el.children
         names.push(tags.map(tag => {
           if (tag.name === 'a') {
+            console.log(tag.children[0])
+            console.log(tag.children[0].children[0])
+            console.log(tag.children[0].children[0].data)
+
             return tag.children[0].children[0].data
           }
         }).filter(x => x !== undefined))
