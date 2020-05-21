@@ -56,6 +56,7 @@ class Spotify {
             return tag.children[0].children[0].data
           }
         }).filter(x => x !== undefined))
+        console.log(names);
         return names;
       }).get();
 
