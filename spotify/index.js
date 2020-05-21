@@ -51,11 +51,7 @@ class Spotify {
         let tags = el.children
         names.push(tags.map(tag => {
           if (tag.name === 'a') {
-            console.log(tag.children);
-            console.log('a');
-            console.log(tag.children[0]);
-            console.log('b');
-            console.log(tag.children[0].children);
+            console.log(tag.children[0].children[0]);
             console.log('c');
             return tag.children[0].children[0].data
           }
