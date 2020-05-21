@@ -46,13 +46,17 @@ class Spotify {
       let res = await got(this.url)
       const $ = cheerio.load(res.body);
       const artist = $('span.artists-albums');
-      console.log(artist);
-      console.log('abc')
       const listSpotify = artist.map((index, el) => {
         let names = []
         let tags = el.children
         names.push(tags.map(tag => {
           if (tag.name === 'a') {
+            console.log(tag.children);
+            console.log('a');
+            console.log(tag.children[0]);
+            console.log('b');
+            console.log(tag.children[0].children);
+            console.log('c');
             return tag.children[0].children[0].data
           }
         }).filter(x => x !== undefined))
