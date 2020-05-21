@@ -46,25 +46,18 @@ class Spotify {
       let res = await got(this.url)
       const $ = cheerio.load(res.body);
       // console.log($('span'))
-      // const artist = $('span.artists-albums');
-      const artist = $('span.track-name');
+      const artist = $('span.artists-albums');
       // console.log(artist)
       const listSpotify = artist.map((index, el) => {
         let names = []
         let tags = el.children
         names.push(tags.map(tag => {
           if (tag.name === 'a') {
-            console.log(tag.children)
-            console.log(tag.children[0].children[0])
-            console.log(tag.children[0].children[0].data)
-
             return tag.children[0].children[0].data
           }
         }).filter(x => x !== undefined))
         return names;
       }).get();
-
-      console.log(listSpotify);
 
       listSpotify.forEach(subItem => {
         let finalName = ''
@@ -75,6 +68,7 @@ class Spotify {
       })
       
       // return arr.playlist;
+      console.log(arr.playlist);
       return await this.processScrap(arr.playlist);
     }
 }
