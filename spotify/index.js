@@ -24,7 +24,7 @@ class Spotify {
     async processScrap (arr) {
       const craw = util.promisify(crawler);
       const newArray = [];
-      const promises = arr.forEach(async (name, idx) => {
+      const promises = arr.map(async (name, idx) => {
         let result = await craw(name);
         if (result.length > 0) {
           newArray.push({
