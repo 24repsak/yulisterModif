@@ -28,8 +28,8 @@ class Spotify {
       const craw = util.promisify(crwl);
       const newArray = [];
       const promises = arr.map(async (name, idx) => {
-        let result = await craw(name);
-        console.log(result)
+        let r = await craw(name);
+        let result = r.videos
         if (result.length > 0) {
           newArray.push({
             name: result[0].title,
