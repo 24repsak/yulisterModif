@@ -34,7 +34,7 @@ class Spotify {
           let result = r.videos
           if (result.length > 0) {
             newArray.push({
-              name: result[0].title,
+              name: name,
               url: result[0].url
             })
             getLoop = false
