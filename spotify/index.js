@@ -29,6 +29,7 @@ class Spotify {
       const newArray = [];
       const promises = arr.map(async (name, idx) => {
         let result = await craw(name);
+        console.log(result)
         if (result.length > 0) {
           newArray.push({
             name: result[0].title,
