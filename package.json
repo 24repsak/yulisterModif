@@ -1,7 +1,7 @@
 {
-  "name": "you-lister",
-  "version": "2.0.0",
-  "description": "Youtube/Spotify Playlist Scrapper",
+  "name": "yulister",
+  "version": "10.0.0",
+  "description": "Spotify Playlist Scrapper",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,7 +13,7 @@
     "playlist",
     "scrapper"
   ],
-  "author": "Gabriel Miranda Lyra <gmlyra@live.com>",
+  "author": "Gabriel Miranda Lyra <gmlyra@live.com>, i modif",
   "repository": {
     "type": "git",
     "url": "https://github.com/mrarticuno/you-lister.git"
