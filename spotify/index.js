@@ -3,6 +3,8 @@ const cheerio = require('cheerio');
 const _ = require('lodash');
 const util = require('util');
 let crawler = require('youtube-crawler');
+let crwl = require('yt-search');
+
 class Spotify {
     constructor (data) {
       this.url = (data.url || '');
@@ -22,14 +24,15 @@ class Spotify {
     }
 
     async processScrap (arr) {
-      const craw = util.promisify(crawler);
+      // const craw = util.promisify(crawler);
+      const craw = util.promisify(crwl);
       const newArray = [];
       const promises = arr.map(async (name, idx) => {
         let result = await craw(name);
         if (result.length > 0) {
           newArray.push({
             name: result[0].title,
-            url: result[0].link
+            url: result[0].url
           })
         }
       });
